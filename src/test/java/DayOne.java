@@ -14,6 +14,7 @@ public class DayOne {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.google.com");
 		System.out.println(driver.getTitle());
+		driver.quit();
 	}
 
 }
