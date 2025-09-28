@@ -1,14 +1,20 @@
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 
 public class DayOne {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException,IOException, WebDriverException{
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\USER\\Desktop\\Selenium\\chromedriver\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
@@ -21,6 +27,11 @@ public class DayOne {
 		for(WebElement option:options) {
 			if(option.getText().equalsIgnoreCase("selenium interview questions")) {
 				option.click();
+				TakesScreenshot ts=(TakesScreenshot)driver;
+				File src=ts.getScreenshotAs(OutputType.FILE);
+				File des=new File("Screenshot New.png");
+				FileHandler.copy(src, des);
+				System.out.println("Captured");
 				System.out.println("Clicked on mentioned element.");
 				break;
 			}
