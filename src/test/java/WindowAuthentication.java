@@ -22,6 +22,6 @@ public static void main(String[] args) throws InterruptedException, IOException 
 	File des=new File("Screenshot New.png");
 	FileHandler.copy(src, des);
 	System.out.println("Captured");
-	driver.quit();
+	
 }
 }

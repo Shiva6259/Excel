@@ -33,6 +33,7 @@ public class BrokenLinks {
 				e.printStackTrace();
 			}
 		}
+		driver.quit();
 	}
 
 }
