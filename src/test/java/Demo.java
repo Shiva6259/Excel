@@ -10,6 +10,7 @@ public class Demo {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://amazon.com");
+		System.out.println("Navigated to url");
 		driver.quit();
 		
 	}
