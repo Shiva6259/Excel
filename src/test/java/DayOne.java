@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,18 +25,17 @@ public class DayOne {
 		driver.findElement(By.id("APjFqb")).sendKeys("selenium");
 		Thread.sleep(5000);
 		List<WebElement> options=driver.findElements(By.xpath("//ul[@class='G43f7e']/li"));
-		for(WebElement option:options) {
-			if(option.getText().equalsIgnoreCase("selenium interview questions")) {
-				option.click();
+		
 				TakesScreenshot ts=(TakesScreenshot)driver;
 				File src=ts.getScreenshotAs(OutputType.FILE);
 				File des=new File("Screenshot New.png");
 				FileHandler.copy(src, des);
 				System.out.println("Captured");
-				System.out.println("Clicked on mentioned element.");
-				break;
+				
+				
 			}
-		}
+		
+		
 	}
 
-}
+
